@@ -1,0 +1,25 @@
+<configuration>
+
+    <property name="ROOT_DIR" value="log/" />
+
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${ROOT_DIR}/demo.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${ROOT_DIR}/demo-%d{yyyy-MM-dd}#%i.log</fileNamePattern>
+            <maxFileSize>100MB</maxFileSize>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%-40(%date{yyyy-MM-dd HH:mm:ss.SSS} %highlight(%-5level) [%thread]) \(%class:%line\) %-6([%logger]) %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="ASYNC" class="ch.qos.logback.classic.AsyncAppender">
+        <appender-ref ref="FILE" />
+        <includeCallerData>true</includeCallerData>
+    </appender>
+
+    <root level="info">
+        <appender-ref ref="ASYNC" />
+    </root>
+
+</configuration>

@@ -1,0 +1,6 @@
+2018-01-21 19:20:12.149 [34mINFO [0;39m [main] (Main:13) [Main] first hi
+2018-01-21 19:20:12.152 [34mINFO [0;39m [main] (Main:14) [Main] second hi
+2018-01-21 19:20:12.155 [1;31mERROR[0;39m [main] (Main:19) [Main] something wrong:
+java.lang.Exception: this is a exception msg.
+	at Main.testException(Main.java:31)
+	at Main.main(Main.java:17)
